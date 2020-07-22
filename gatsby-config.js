@@ -20,8 +20,6 @@ module.exports = {
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-        // spaceId:'s19cibcutfmz',
-        // accessToken: 'r5DgAcCWJ45jJ219NMFQYm99HiHStPGZhBNJLQ4L-Fc'
       }
     },
     'gatsby-plugin-sass',

@@ -1,5 +1,19 @@
-import React from "react"
+import React from "react";
+import {Link} from 'gatsby';
+import Layout from '../components/layout'
 
-export default function Home() {
-  return <div>Hello world!</div>
+const Home = () => {
+  return (
+    <>
+    <Layout page='Home'>
+      <h1>Hello</h1>
+      <h2>Khairah</h2>
+      <p>
+        <Link to="/contact">Contact me</Link>
+      </p>
+    </Layout>
+    </>
+  )
 }
+
+export default Home;

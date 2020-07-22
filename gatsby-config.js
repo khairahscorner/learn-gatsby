@@ -3,8 +3,54 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  siteMetadata: {
+    title: "Bootcamp",
+    author:"Airah"
+  },
+  plugins: [
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+        // spaceId:'s19cibcutfmz',
+        // accessToken: 'r5DgAcCWJ45jJ219NMFQYm99HiHStPGZhBNJLQ4L-Fc'
+      }
+    },
+    'gatsby-plugin-sass',
+      // you can also use this to register plugins. 
+      // adv: you can provide options (config) for the plugin
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'src',
+        path: `${__dirname}/src/`
+      }
+    },
+    'gatsby-transformer-remark',
+    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          'gatsby-remark-relative-images',
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 750,
+              linkImagesToOriginal: false,
+              // wrapperStyle: border:1px solid purple
+            }
+          }
+        ]
+      }
+    }
+  ],
 }

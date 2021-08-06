@@ -7,7 +7,7 @@ const Home = () => {
     <>
     <Layout page='Home'>
       <h1>Hello</h1>
-      <h2>Khairah</h2>
+      <h2>I'm Khairah and I changed the home page</h2>
       <p>
         <Link to="/contact">Contact me</Link>
       </p>

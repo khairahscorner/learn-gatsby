@@ -26,11 +26,16 @@ query (
 const Blog = (props) => {
     console.log(props)
     const options = {
+      // options you can pass to customise nodes, marks,text. "renderMark", "rnderText"
         renderNode: {
             "embedded-asset-block" : (node) => {
                 const alt = node.data.target.fields.title['en-US']
                 const url = node.data.target.fields.file['en-US'].url
-                return <img src={url} alt={alt}/>
+                return (
+                  <>
+                  <p>Testing this</p>
+                  <img src={url} alt={alt}/></>
+                )
             }
         }
     }
